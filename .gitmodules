@@ -1,0 +1,9 @@
+[submodule "seosnap-dashboard"]
+	path = seosnap-dashboard
+	url = ../seosnap-dashboard.git
+[submodule "seosnap-cachewarmer"]
+	path = seosnap-cachewarmer
+	url = ../seosnap-cachewarmer.git
+[submodule "seosnap-cacheserver"]
+	path = seosnap-cacheserver
+	url = ../rendertron-cache-server.git

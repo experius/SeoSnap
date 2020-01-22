@@ -1,0 +1,94 @@
+version: '3.7'
+services:
+  dashboard:
+    build: ./seosnap-dashboard
+    image: seosnap-dashboard
+    container_name: seosnap_dashboard
+    env_file: .env
+    environment:
+      DB_HOST_OVERRIDE: db
+    volumes:
+      - ./seosnap-dashboard:/code
+      - ./logs:/code/logs
+    restart: "unless-stopped"
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - seosnap
+
+  cachewarmer:
+    build: ./seosnap-cachewarmer
+    image: seosnap-cachewarmer
+    container_name: seosnap_cachewarmer
+    env_file: .env
+    volumes:
+      - ./seosnap-cachewarmer:/code
+      - ./logs:/code/logs
+    restart: "no"
+    depends_on:
+      - dashboard
+      - cacheserver
+    networks:
+      - seosnap
+
+  cacheserver:
+    build: ./seosnap-cacheserver
+    image: seosnap-cacheserver
+    container_name: seosnap_cacheserver
+    env_file: .env
+    volumes:
+      - ./cache:/app/cache
+      - ./logs:/app/logs
+    restart: "unless-stopped"
+    ports:
+      - 5000:5000
+    depends_on:
+      - rendertron
+    networks:
+      - seosnap
+
+  rendertron:
+    image: ammobindotca/rendertron
+    container_name: rendertron
+    restart: "unless-stopped"
+    ports:
+      - 3000:3000
+    networks:
+      - seosnap
+
+  db:
+    image: mysql
+    entrypoint: ['/entrypoint.sh', '--default-authentication-plugin=mysql_native_password']
+    environment:
+      MYSQL_ROOT_HOST: ${DB_ROOT_HOST}
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
+    volumes:
+      - ./dev/instance/mariadb:/var/lib/mysql
+    restart: "unless-stopped"
+    networks:
+      - seosnap
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_USER: ${DB_USER}
+      PMA_PASSWORD: ${DB_PASS}
+    restart: "unless-stopped"
+    ports:
+      - 8081:80
+    volumes:
+      - ./dev/instance/mariadb:/var/lib/mysql
+    networks:
+      - seosnap
+
+networks:
+  seosnap:
+    driver: bridge
