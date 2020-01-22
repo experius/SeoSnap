@@ -14,7 +14,7 @@ docker-compose up --build -d && docker-compose down
 ```
 
 # Usage
-* Dashboard: http://127.0.0.1:8080/ (default login: snaptron/snaptron)
+* Dashboard: http://127.0.0.1:8080/ (default login: snaptron/Sn@ptron1337)
 * API Docs: http://127.0.0.1:8080/docs
 * PHPMyAdmin: http://127.0.0.1:8081/
 * Cache Server: http://127.0.0.1:5000/render/\<your url\>
