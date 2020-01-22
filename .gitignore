@@ -2,7 +2,7 @@
 /.idea
 /dev/instance
 !/dev/instance/.gitkeep
-/.env
+!/.env
 !/.env.example
 /cache
 !/cache/.gitkeep
