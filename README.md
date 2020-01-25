@@ -2,8 +2,8 @@
 Setup for the whole seosnap stack including dashboard, cache server and cache warmer used for prerendering and full
  page caching PWA's.
  
- # Installation
- * Pull the repo
+# Installation
+* Pull the repo
 ```
 git clone --recursive git@bitbucket.org:experius/seosnap.git
 ```
