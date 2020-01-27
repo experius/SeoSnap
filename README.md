@@ -1,11 +1,12 @@
-# Seosnap
+![logo](https://github.com/experius/SeoSnap/raw/master/assets/logo.png)
+
 Setup for the whole seosnap stack including dashboard, cache server and cache warmer used for prerendering and full
  page caching PWA's.
  
 # Installation
 * Pull the repo
 ```
-git clone --recursive git@bitbucket.org:experius/seosnap.git
+git clone --recursive git@github.com:experius/SeoSnap.git
 ```
 * **IMPORTANT** Update .env file admin username and password. (These have a value default value)
 * Start, build and stop the container
