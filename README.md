@@ -20,7 +20,7 @@ Wait 5 seconds and then build again
 docker-compose up --build
 ```
 
-Everythins should run now
+Everything should run now
 
 # Usage
 * Dashboard: http://127.0.0.1:8080/ (default login: snaptron/Sn@ptron1337)
@@ -55,3 +55,6 @@ When the crawler is started it connects with the dashboard api. It uses scrapy t
 
 ### Cache Server
 The cache server is a simple file caching server. If a file exist with the content of the page it serves the html from the file. If not, it renders the requested url with rendertron and saves the html output in a file. To refresh the cache the cache-warmer uses PUT requests instead of GET. This will force update from the cache file.
+
+# Build with
+![diagram](https://github.com/experius/SeoSnap/raw/master/assets/software.png)
