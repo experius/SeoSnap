@@ -73,22 +73,6 @@ services:
     networks:
       - seosnap
 
-  pma:
-    image: phpmyadmin/phpmyadmin
-    depends_on:
-      - db
-    environment:
-      PMA_HOST: db
-      PMA_USER: ${DB_USER}
-      PMA_PASSWORD: ${DB_PASS}
-    restart: "unless-stopped"
-    ports:
-      - 8081:80
-    volumes:
-      - ./dev/instance/mariadb:/var/lib/mysql
-    networks:
-      - seosnap
-
 networks:
   seosnap:
     driver: bridge
