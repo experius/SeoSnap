@@ -2,12 +2,13 @@
 /.idea
 /dev/instance
 !/dev/instance/.gitkeep
-!/.env
+/.env
 !/.env.example
 /cache
 !/cache/.gitkeep
 /logs
 !/logs/.gitkeep
+.env
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template

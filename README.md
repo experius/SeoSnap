@@ -4,14 +4,13 @@ Setup for the whole seosnap stack including dashboard, cache server and cache wa
  page caching PWA's.
  
 # Installation
-* Pull the repo (*note: the pull is recursive*)
 ```
+# Clone
 git clone --recursive git@github.com:experius/SeoSnap.git
-```
-* **IMPORTANT** Update .env file admin username and password. (These have a value default value)
-* Start, build and stop the container
-```
-docker-compose up --build -d && docker-compose down
+# Configure
+make install
+# Start server
+make up
 ```
 
 # Usage
@@ -27,7 +26,8 @@ Cache directory ./cache
 ## Run cache warmer
 Make sure you have created a website via dashboard http://127.0.0.1:8080/seosnap/website/add/
 ```
-docker-compose run cachewarmer cache <website id>
+make cachewarmer 
+make warm A="cache <website id>"
 ```
 
 ## Nginx
@@ -78,11 +78,11 @@ Options:
 ### Examples
 ```
 # Cache the sitemap of website 1
-docker-compose run cachewarmer cache 1
+make warm A="cache 1"
 
 # Cache requests in queue for websites 1 and 2
- dc run cachewarmer cache 1,2 use_queue=true
+make warm A="cache 1,2 use_queue=true"
 
 # Clean the queue for websites 1 and 2
-docker-compose run cachewarmer clean 1,2
+make warm A="clean 1,2"
 ```
