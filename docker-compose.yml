@@ -50,9 +50,11 @@ services:
       - seosnap
 
   rendertron:
-    image: ammobindotca/rendertron
+    image: egordm/rendertron:latest
     container_name: rendertron
     restart: "unless-stopped"
+    volumes:
+      - ./rendertron-config.json:/app/config.json
     ports:
       - 3000:3000
     networks:
