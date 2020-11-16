@@ -39,6 +39,8 @@ services:
   rendertron:
     container_name: snapstack_rendertron
     env_file: ./.env
+    volumes:
+      - ./seosnap-cacheserver/rendertron-config.json:/app/config.json
     networks:
       - seosnap
 
