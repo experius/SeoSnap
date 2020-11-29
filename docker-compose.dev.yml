@@ -1,11 +1,12 @@
 version: '3.7'
 services:
   dashboard:
-    build:
+    build: 
       context: seosnap-dashboard
     container_name: seosnap_stack_dashboard
-    env_file: ./.env
+    env_file: .env
     volumes:
+      - ./seosnap-dashboard:/code
       - ./logs:/code/logs
     networks:
       - seosnap
@@ -14,8 +15,9 @@ services:
     build:
       context: seosnap-cachewarmer
     container_name: seosnap_stack_cachewarmer
-    env_file: ./.env
+    env_file: .env
     volumes:
+      - ./seosnap-cachewarmer:/code
       - ./logs:/code/logs
     depends_on:
       - dashboard
@@ -27,7 +29,7 @@ services:
     build:
       context: seosnap-cacheserver
     container_name: seosnap_stack_cacheserver
-    env_file: ./.env
+    env_file: .env
     volumes:
       - ./cache:/app/cache
       - ./logs:/app/logs
@@ -38,15 +40,11 @@ services:
 
   rendertron:
     container_name: snapstack_rendertron
-    env_file: ./.env
-    volumes:
-      - ./seosnap-cacheserver/rendertron-config.json:/app/config.json
     networks:
       - seosnap
 
   db:
     container_name: seosnap_stack_db
-    env_file: ./.env
     volumes:
       - ./dev/instance/mariadb:/var/lib/mysql
     networks:
