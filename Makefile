@@ -6,6 +6,9 @@ DC_CONFIGS_DEV = -f docker-compose.yml -f seosnap-cacheserver/docker-compose.dev
 up: 
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml up
 
+down:
+	docker-compose ${DC_CONFIGS} -f docker-compose.yml down
+
 daemon:
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml up -d
 
