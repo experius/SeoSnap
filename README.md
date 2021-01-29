@@ -86,4 +86,3 @@ make warm A="cache 1,2 use_queue=true"
 # Clean the queue for websites 1 and 2
 make warm A="clean 1,2"
 ```
-.
