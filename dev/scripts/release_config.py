@@ -21,6 +21,12 @@ REPLACE_MOUNTS = {
     './seosnap-cacheserver/rendertron-config.json': './rendertron-config.json'
 }
 
+if not os.path.exists(os.path.join(WORKDIR, '.env')):
+    copyfile(
+        os.path.join(WORKDIR, './.env.example'),
+        os.path.join(WORKDIR, './.env'),
+    )
+
 configs = []
 for file in CONFIGS:
     print(f'Reading file: {file}')
