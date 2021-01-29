@@ -1,4 +1,6 @@
 #!make
+.PHONY: all release
+
 DC_CONFIGS = -f docker-compose.yml -f seosnap-cacheserver/docker-compose.yml -f seosnap-cachewarmer/docker-compose.yml -f seosnap-dashboard/docker-compose.yml
 DC_CONFIGS_DEV = -f docker-compose.yml -f seosnap-cacheserver/docker-compose.dev.yml -f seosnap-cachewarmer/docker-compose.dev.yml -f seosnap-dashboard/docker-compose.dev.yml
 
@@ -37,3 +39,10 @@ develop:
 	git submodule foreach --recursive git fetch origin develop
 	git submodule foreach --recursive git checkout develop
 	echo "Everything is now up to date"
+
+
+release:
+	python dev/scripts/release_config.py --configs docker-compose.yml seosnap-cacheserver/docker-compose.yml seosnap-cachewarmer/docker-compose.yml seosnap-dashboard/docker-compose.yml docker-compose.yml
+	rm -rf release/cache release/logs
+	rm release/release.zip
+	cd release && zip release.zip * .env.example

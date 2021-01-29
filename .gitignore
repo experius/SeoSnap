@@ -140,4 +140,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
+/release/.env
+/release/.env.example
+/release/*.zip
