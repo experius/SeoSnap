@@ -44,5 +44,5 @@ develop:
 release:
 	python dev/scripts/release_config.py --configs docker-compose.yml seosnap-cacheserver/docker-compose.yml seosnap-cachewarmer/docker-compose.yml seosnap-dashboard/docker-compose.yml docker-compose.yml
 	rm -rf release/cache release/logs
-	rm release/release.zip
+	rm -f release/release.zip
 	cd release && zip release.zip * .env.example
