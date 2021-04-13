@@ -1,8 +1,8 @@
 #!make
 .PHONY: all release
 
-DC_CONFIGS = -f docker-compose.yml -f seosnap-cacheserver/docker-compose.yml -f seosnap-cachewarmer/docker-compose.yml -f seosnap-dashboard/docker-compose.yml
-DC_CONFIGS_DEV = -f docker-compose.yml -f seosnap-cacheserver/docker-compose.dev.yml -f seosnap-cachewarmer/docker-compose.dev.yml -f seosnap-dashboard/docker-compose.dev.yml
+DC_CONFIGS = -f docker-compose.yml -f seosnap-cachewarmer/docker-compose.yml -f seosnap-dashboard/docker-compose.yml
+DC_CONFIGS_DEV = -f docker-compose.yml -f seosnap-cachewarmer/docker-compose.dev.yml -f seosnap-dashboard/docker-compose.dev.yml
 
 
 up: 

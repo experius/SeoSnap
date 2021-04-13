@@ -1,0 +1,9 @@
+{
+  "restrictedUrlPattern": ".*(\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.mp4)($|\\?)",
+  "cache": "filesystem",
+  "cacheConfig": {
+    "cacheDurationMinutes": 1440,
+    "cacheMaxEntries": -1,
+    "snapshotDir": "/app/cache"
+  }
+}
