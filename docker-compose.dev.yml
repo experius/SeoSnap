@@ -25,19 +25,6 @@ services:
     networks:
       - seosnap
 
-#  cacheserver:
-#    build:
-#      context: seosnap-cacheserver
-#    container_name: seosnap_stack_cacheserver
-#    env_file: .env
-#    volumes:
-#      - ./cache:/app/cache
-#      - ./logs:/app/logs
-#    depends_on:
-#      - rendertron
-#    networks:
-#      - seosnap
-
   rendertron:
     container_name: snapstack_rendertron
     networks:
