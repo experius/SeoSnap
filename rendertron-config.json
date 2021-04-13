@@ -1,5 +1,6 @@
 {
   "restrictedUrlPattern": ".*(\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.mp4)($|\\?)",
+  "closeBrowser": true,
   "cache": "filesystem",
   "cacheConfig": {
     "cacheDurationMinutes": 1440,
