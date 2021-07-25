@@ -1,3 +1,12 @@
 {
-  "restrictedUrlPattern": ".*(\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.mp4)($|\\?)"
+  "restrictedUrlPattern": ".*(\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.mp4|\\.svg)($|\\?)",
+  "closeBrowser": false,
+  "setUserAgentMobile": false,
+  "stripSelectors": "",
+  "cache": "filesystem",
+  "cacheConfig": {
+    "cacheDurationMinutes": 1440,
+    "cacheMaxEntries": -1,
+    "snapshotDir": "/app/cache"
+  }
 }
