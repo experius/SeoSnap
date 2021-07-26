@@ -67,7 +67,7 @@ services:
       API_URL: http://dashboard:80/docs/
       API_VER: v1
       CACHEWARMER_BUFFER_SIZE: '50'
-      CACHEWARMER_CACHE_SERVER_URL: http://cacheserver:5000/render
+      CACHEWARMER_CACHE_SERVER_URL: http://cacheserver:3000/render
       CACHEWARMER_CONCURRENT_REQUESTS: '2'
       CACHEWARMER_LOG_LEVEL: ERROR
       CACHEWARMER_THREADS: '2'
@@ -113,7 +113,7 @@ services:
       API_URL: http://dashboard:80/docs/
       API_VER: v1
       CACHEWARMER_BUFFER_SIZE: '50'
-      CACHEWARMER_CACHE_SERVER_URL: http://cacheserver:5000/render
+      CACHEWARMER_CACHE_SERVER_URL: http://cacheserver:3000/render
       CACHEWARMER_CONCURRENT_REQUESTS: '2'
       CACHEWARMER_LOG_LEVEL: ERROR
       CACHEWARMER_THREADS: '2'
@@ -160,7 +160,7 @@ services:
       API_URL: http://dashboard:80/docs/
       API_VER: v1
       CACHEWARMER_BUFFER_SIZE: '50'
-      CACHEWARMER_CACHE_SERVER_URL: http://cacheserver:5000/render
+      CACHEWARMER_CACHE_SERVER_URL: http://cacheserver:3000/render
       CACHEWARMER_CONCURRENT_REQUESTS: '2'
       CACHEWARMER_LOG_LEVEL: ERROR
       CACHEWARMER_THREADS: '2'
@@ -178,7 +178,7 @@ services:
       EMAIL_USE_TLS: '0'
       EXTERNAL_CACHE_SERVER_URL: ''
       TAG: latest
-    image: egordm/rendertron:latest
+    image: experiusnl/rendertron:latest
     networks:
       seosnap: {}
     ports:
