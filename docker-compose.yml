@@ -39,6 +39,8 @@ services:
   db:
     container_name: seosnap_stack_db
     env_file: ./.env
+    volumes:
+      - ./dev/instance/mariadb:/var/lib/mysql
     networks:
       - seosnap
 
