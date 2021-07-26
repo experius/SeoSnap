@@ -241,7 +241,7 @@ services:
       RENDERTRON_CACHE_ROOT: ./cache
       RENDERTRON_MOBILE_REGEX: .*Mobile.*
       TAG: latest
-    image: egordm/rendertron:latest
+    image: experiusnl/rendertron:latest
     networks:
       rendertron_net: {}
       seosnap: {}
