@@ -21,7 +21,8 @@ dc:
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml ${A}
 
 warm:
-	docker-compose ${DC_CONFIGS} -f docker-compose.yml run cachewarmer ${A}
+	docker-compose ${DC_CONFIGS} -f docker-compose.yml run --rm --name cachewarmer_full cachewarmer ${A}
+	docker-compose ${DC_CONFIGS} -f docker-compose.yml run --rm --name cachewarmer_queue cachewarmer ${A}
 
 install:
 	echo 'Running installation'
