@@ -4,6 +4,3 @@
 [submodule "seosnap-cachewarmer"]
 	path = seosnap-cachewarmer
 	url = ../SeoSnap-Cache-Warmer.git
-[submodule "seosnap-cacheserver"]
-	path = seosnap-cacheserver
-	url = ../SeoSnap-Cache-Server.git

@@ -19,28 +19,20 @@ services:
       - ./logs:/code/logs
     depends_on:
       - dashboard
-      - cacheserver
-    networks:
-      - seosnap
-
-  cacheserver:
-    build:
-      context: seosnap-cacheserver
-    container_name: seosnap_stack_cacheserver
-    env_file: ./.env
-    volumes:
-      - ./cache:/app/cache
-      - ./logs:/app/logs
-    depends_on:
       - rendertron
     networks:
       - seosnap
 
   rendertron:
+    image: egordm/rendertron:latest
     container_name: snapstack_rendertron
     env_file: ./.env
+    restart: always
     volumes:
-      - ./seosnap-cacheserver/rendertron-config.json:/app/config.json
+      - ./rendertron-config.json:/app/config.json
+      - ./cache:/app/cache
+    ports:
+      - 3000:3000
     networks:
       - seosnap
 

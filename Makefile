@@ -1,11 +1,11 @@
 #!make
 .PHONY: all release
 
-DC_CONFIGS = -f docker-compose.yml -f seosnap-cacheserver/docker-compose.yml -f seosnap-cachewarmer/docker-compose.yml -f seosnap-dashboard/docker-compose.yml
-DC_CONFIGS_DEV = -f docker-compose.yml -f seosnap-cacheserver/docker-compose.dev.yml -f seosnap-cachewarmer/docker-compose.dev.yml -f seosnap-dashboard/docker-compose.dev.yml
+DC_CONFIGS = -f docker-compose.yml -f seosnap-cachewarmer/docker-compose.yml -f seosnap-dashboard/docker-compose.yml
+DC_CONFIGS_DEV = -f docker-compose.yml -f seosnap-cachewarmer/docker-compose.dev.yml -f seosnap-dashboard/docker-compose.dev.yml
 
 
-up: 
+up:
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml up
 
 down:
@@ -42,7 +42,7 @@ develop:
 
 
 release:
-	python dev/scripts/release_config.py --configs docker-compose.yml seosnap-cacheserver/docker-compose.yml seosnap-cachewarmer/docker-compose.yml seosnap-dashboard/docker-compose.yml docker-compose.yml
+	python dev/scripts/release_config.py --configs docker-compose.yml seosnap-cachewarmer/docker-compose.yml seosnap-dashboard/docker-compose.yml docker-compose.yml
 	rm -rf release/cache release/logs
 	rm -f release/release.zip
 	cd release && zip release.zip * .env.example

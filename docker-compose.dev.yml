@@ -21,19 +21,6 @@ services:
       - ./logs:/code/logs
     depends_on:
       - dashboard
-      - cacheserver
-    networks:
-      - seosnap
-
-  cacheserver:
-    build:
-      context: seosnap-cacheserver
-    container_name: seosnap_stack_cacheserver
-    env_file: .env
-    volumes:
-      - ./cache:/app/cache
-      - ./logs:/app/logs
-    depends_on:
       - rendertron
     networks:
       - seosnap

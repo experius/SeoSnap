@@ -18,7 +18,6 @@ OUTPUT_DIR = 'release'
 WORKDIR = os.path.abspath(os.curdir)
 
 REPLACE_MOUNTS = {
-    './seosnap-cacheserver/rendertron-config.json': './rendertron-config.json'
 }
 
 if not os.path.exists(os.path.join(WORKDIR, '.env')):
@@ -71,7 +70,7 @@ with open(os.path.join(OUTPUT_DIR, 'docker-compose.yml'), 'w') as f:
     f.write(serialize_config(cfg, None, False))
 
 copyfile(
-    os.path.join(WORKDIR, './seosnap-cacheserver/rendertron-config.json'),
+    os.path.join(WORKDIR, './rendertron-config.json'),
     os.path.join(OUTPUT_DIR, './rendertron-config.json'),
 )
 
