@@ -1,0 +1,1 @@
+[ $(/usr/bin/curl -s -o /dev/null -w '%{http_code}' 'http://localhost:3000/render/https://galaxy.experiusdemo.nl/?refreshCache=true') -eq '200' ] && curl -fsS -m 10 --retry 5 -o /dev/null https://hc-ping.com/xxxx
