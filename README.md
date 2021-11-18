@@ -14,7 +14,8 @@ Setup for the whole seosnap stack including dashboard, cache server and cache wa
 ## For development
 ```
 # Clone
-git clone --recursive git@github.com:experius/SeoSnap.git
+cd ~
+git clone --recursive git@github.com:experius/SeoSnap.git seosnap
 # Configure
 make install
 # Start server
@@ -42,6 +43,16 @@ make warm A="cache <website id>"
 Check the nginx.conf in the example folder
 
 
+## Crontab
+
+check the crontab.txt the example folder and use the cachewarmer.sh & healthchecks.sh
+
+ - cachewarmer - create your own cachewarmer.sh and update the healthchecks url and the website ids
+ - healthchecks - Just replace the https://hc-ping.com/xxxx with your ping URL & change https://galaxy.experius.nl/ to your PWA homepage
+ - backups - there is an example cron which will make a backup of the cache files
+ - docker volumes cleanup - as you can see in the cachewarmer.sh the rendertron container will be restarted for performance so we need to clean that up
+
+
 # How it works
 
 ![diagram](https://github.com/experius/SeoSnap/raw/master/assets/diagram.png)
@@ -58,49 +69,7 @@ The cache server is a simple file caching server. If a file exist with the conte
 ### [Rendertron Server](https://github.com/experius/rendertron/tree/docker)
 Rendertron + Cache is added and will replace the SeoSnap Cache Server
 
-Example config file for rendertron:
-
-```json
-{
-  "restrictedUrlPattern": "((.*(\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.mp4)($|\\?))|googleapis\\.com|gstatic\\.com|bat\\.bing\\.com|klarnacdn\\.net|www\\.google\\.com|datatricks\\.com|googletagmanager\\.com)",
-  "closeBrowser": false,
-  "cache": "filesystem",
-  "timeout": 60000,
-  "cacheConfig": {
-    "cacheDurationMinutes": 10080,
-    "cacheMaxEntries": -1,
-    "snapshotDir": "/app/cache"
-  },
-  "width": 1280,
-  "height": 1200,
-  "widthMobile": 375,
-  "widthMobile": 375,
-  "puppeteerArgs": [
-    "--user-data-dir=/app/cache/myUserDataDir",
-    "--autoplay-policy=user-gesture-required",
-    "--disable-background-networking",
-    "--disable-breakpad",
-    "--disable-component-update",
-    "--disable-default-apps",
-    "--disable-domain-reliability",
-    "--disable-notifications",
-    "--disable-offer-store-unmasked-wallet-cards",
-    "--disable-prompt-on-repost",
-    "--disable-renderer-backgrounding",
-    "--metrics-recording-only",
-    "--mute-audio",
-    "--no-default-browser-check",
-    "--no-first-run",
-    "--no-pings",
-    "--no-sandbox",
-    "--no-zygote",
-    "--password-store=basic",
-    "--use-gl=swiftshader",
-    "--use-mock-keychain",
-    "--disable-dev-shm-usage"
-  ]
-}
-```
+Recommended Rendertron config has been set in rendertron-config.json
 
 # Built with
 ![diagram](https://github.com/experius/SeoSnap/raw/master/assets/software.png)

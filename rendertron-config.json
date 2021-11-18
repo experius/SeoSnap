@@ -1,5 +1,5 @@
 {
-  "restrictedUrlPattern": "((.*(\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.mp4)($|\\?))|googleapis\\.com|gstatic\\.com|bat\\.bing\\.com|klarnacdn\\.net|www\\.google\\.com|datatricks\\.com|googletagmanager\\.com)",
+  "restrictedUrlPattern": "((.*(\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.mp4)($|\\?))|googleapis\\.com|gstatic\\.com|bat\\.bing\\.com|klarnacdn\\.net|www\\.google\\.com|datatricks\\.com|googletagmanager\\.com|cookiefirst\\.com|sentry-cdn\\.com|trackedweb\\.net|checkUserIsAuthed|getCartDetails|getGeoIpRedirect|available_regions|googlesyndication\\.com|data\\.*\\.nl)",
   "closeBrowser": false,
   "cache": "filesystem",
   "timeout": 60000,
@@ -34,6 +34,7 @@
     "--password-store=basic",
     "--use-gl=swiftshader",
     "--use-mock-keychain",
-    "--disable-dev-shm-usage"
+    "--disable-dev-shm-usage",
+    "--enable-features=NetworkService"
   ]
 }
