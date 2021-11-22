@@ -178,7 +178,7 @@ services:
       EMAIL_USE_TLS: '0'
       EXTERNAL_CACHE_SERVER_URL: ''
       TAG: latest
-    image: experiusnl/rendertron:3.2.0
+    image: experiusnl/rendertron:3.3.0
     networks:
       seosnap: {}
     ports:
