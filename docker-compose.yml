@@ -24,7 +24,7 @@ services:
       - seosnap
 
   rendertron:
-    image: experiusnl/rendertron:3.2.1
+    image: experiusnl/rendertron:3.3.0
     container_name: snapstack_rendertron
     env_file: ./.env
     restart: always
