@@ -34,4 +34,4 @@ PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
 0 5 * * * find ~/backups/ -type f -mtime +4 -delete
 
 # Cleanup Docker Volumes
-0 1 1 * * docker rm -vf $(docker ps -aq)
+0 1 */2 * * flock -n ~/.cleanup.lock -c '~/docker-cleanup.sh'
