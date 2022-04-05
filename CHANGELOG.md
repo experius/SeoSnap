@@ -1,3 +1,59 @@
+## 0.7.3 (2022-04-05)
+
+[View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.7.3)
+
+*  [FEATURE] Update rendertron to 3.3.2 *(Mr. Lewis)*
+*  [BUGFIX] Update the rendertron image to 3.4.0 *(Lewis Voncken)*
+
+
+## 0.7.2 (2022-02-24)
+
+[View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.7.2)
+
+*  [FEATURE][PWAI-353] Change seosnap dashboard reference *(stefan.vanechtelt)*
+
+
+## 0.7.1 (2021-12-23)
+
+[View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.7.1)
+
+*  [FEATURE] Added docker-cleanup.sh in the examples + updated crontab.txt and made the .sh files executable *(Lewis Voncken)*
+
+
+## 0.7.0 (2021-11-22)
+
+[View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.7.0)
+
+*  [FEATURE][PWAI-353] Updated experiusnl/rendertron to 3.3.0 *(Lewis Voncken)*
+
+
+## 0.6.1 (2021-11-18)
+
+[View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.6.1)
+
+*  [BUGFIX] Updated experius/rendertron to 3.2.1 to reduce timeout and allow emptybreadcrumb *(Lewis Voncken)*
+
+
+## 0.6.0 (2021-11-18)
+
+[View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.6.0)
+
+*  [FEATURE] Updated nginx.conf example with mobile switch and new param encoding + varnish example and additional user agents + Accept-Encoding *(Lewis Voncken)*
+*  [BUGFIX] Updated CACHEWARMER_CACHE_SERVER_URL config to the rendertron url *(Lewis Voncken)*
+*  [FEATURE] Updated rendertron-config.json + added examples for crontab + fix Makefile *(Lewis Voncken)*
+*  [FEATURE] Updated the seosnap-cachewarmer & seosnap-dashboard gitsubmodules *(Lewis Voncken)*
+*  [FEATURE] Use stable 3.2.0 release of experiusnl/rendertron *(Lewis Voncken)*
+
+
+## 0.5.1 (2021-07-26)
+
+[View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.5.1)
+
+*  [FEATURE] Updated Makefile with split for cachewarmer_full and cachewarmer_queue *(Lewis Voncken)*
+*  [FEATURE] Map mariadb with mysql volume for db *(Lewis Voncken)*
+*  [FEATURE] updated docker-compose.yml for release with experiusnl/rendertron + 3000 as render/cache url *(Lewis Voncken)*
+
+
 ## 0.5.0 (2021-07-26)
 
 [View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.5.0)
