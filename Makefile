@@ -23,7 +23,6 @@ dc:
 warm:
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml run --rm --name cachewarmer_full cachewarmer ${A}
 
-# TODO add wait and more threads>??
 thread:
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
