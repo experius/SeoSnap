@@ -27,8 +27,8 @@ thread:
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
-	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
-	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
+#	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
+#	docker-compose ${DC_CONFIGS} -f docker-compose.yml run -d --rm cachewarmer ${A}
 
 queue:
 	docker-compose ${DC_CONFIGS} -f docker-compose.yml run --rm --name cachewarmer_queue cachewarmer ${A}

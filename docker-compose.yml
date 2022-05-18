@@ -24,8 +24,7 @@ services:
       - seosnap
 
   rendertron:
-    image: local-rendertron
-#    image: experiusnl/rendertron:3.3.0
+    image: experiusnl/rendertron:local
     container_name: snapstack_rendertron
     env_file: ./.env
     restart: always
@@ -33,7 +32,7 @@ services:
       - ./rendertron-config.json:/app/config.json
       - ./cache:/app/cache
     ports:
-      - 3001:3000
+      - 3000:3000
     networks:
       - seosnap
 
