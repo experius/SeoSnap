@@ -141,8 +141,8 @@ services:
       seosnap: {}
       seosnap_dashboard: {}
     ports:
-    - published: 3307
-      target: 3307
+    - published: 3306
+      target: 3306
     restart: unless-stopped
     volumes:
     - seosnap_dashboard_db:/var/lib/mysql:rw
