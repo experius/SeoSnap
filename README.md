@@ -38,6 +38,20 @@ make cachewarmer
 make warm A="cache <website id>"
 ```
 
+# Sync pages
+To sync the sitemap pages to the SeoSnap database
+
+```
+make warm A="sync <website id>"
+```
+
+# Multithreading
+To run the cache warmer multiple time 
+
+```
+make thread A="cache <website id>"
+```
+
 ## Nginx
 
 Check the nginx.conf in the example folder
