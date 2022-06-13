@@ -2,6 +2,12 @@
 
 [View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.7.3)
 
+
+
+## latest (2022-04-05)
+
+[View Release](git@github.com:experius/SeoSnap.git/commits/tag/latest)
+
 *  [FEATURE] Update rendertron to 3.3.2 *(Mr. Lewis)*
 *  [BUGFIX] Update the rendertron image to 3.4.0 *(Lewis Voncken)*
 
@@ -72,12 +78,6 @@
 ## 0.4.1 (2021-04-05)
 
 [View Release](git@github.com:experius/SeoSnap.git/commits/tag/0.4.1)
-
-
-
-## latest (2021-04-05)
-
-[View Release](git@github.com:experius/SeoSnap.git/commits/tag/latest)
 
 *  Fixed docker image path *(Egor Dmitriev)*
 *  Fixed unsupported encoding when caching mobile pages *(Egor Dmitriev)*
