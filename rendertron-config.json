@@ -1,7 +1,7 @@
 {
   "restrictedUrlPattern": "((.*(\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.mp4)($|\\?))|googleapis\\.com|gstatic\\.com|bat\\.bing\\.com|klarnacdn\\.net|www\\.google\\.com|datatricks\\.com|googletagmanager\\.com|cookiefirst\\.com|sentry-cdn\\.com|trackedweb\\.net|checkUserIsAuthed|getCartDetails|getGeoIpRedirect|available_regions|googlesyndication\\.com|data\\.*\\.nl)",
   "closeBrowser": false,
-  "cache": "filesystem",
+  "cache": "filesystem-tags",
   "timeout": 60000,
   "cacheConfig": {
     "cacheDurationMinutes": 10080,

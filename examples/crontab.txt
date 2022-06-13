@@ -22,6 +22,12 @@
 # m h  dom mon dow   command
 PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
 
+# Sync the pages of the site
+1 0 */1 * * flock -n ~/.syncpages.lock -c "/bin/bash -c ~/syncpages.sh"
+
+# Sync the pages of the site
+0 0 */2 * * flock -n ~/.clean-queue.lock -c "/bin/bash -c ~/clean-queue.sh"
+
 # Cachewarm Script
 * * * * * flock -n ~/.full_warm.lock -c "/bin/bash -c ~/cachewarmer.sh"
 
