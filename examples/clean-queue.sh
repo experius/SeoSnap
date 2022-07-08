@@ -1,5 +1,3 @@
-# TODO Health check for this!
-
 echo "Redo old queue items"
 make warm A='redooldqueue 1'
 
